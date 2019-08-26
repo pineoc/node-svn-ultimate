@@ -1,4 +1,10 @@
 language: node_js
+dist: trusty
+addons:
+  sonarcloud:
+    organization: "pineoc"
+    token:
+      secure: "G5YFxnGQhlM26OV6v0UIkkeWgBfsy/VMq+sDjLyVsAUPwlKYH2Xbsu1RTYJuGcRz6Yj7JK7Uwf+PI0xgMLuIRRfwyw65BR2S1nMREFgDnlslzLSs/2gljhYNdCC2CahOEU8LH70PQGIe+JSdDILRIg0rLkoXJceKYi3BNtDauAHq5Zvnq0OWeGXyXPc3k81uiXUwgzRtWAW49uW28hzjDTN62p9FeHhY0VDjo3TUKWI3sQfQRS/PtPJzUZ99ze6vXUhsQ9Co/of5s7R0wC4D4XKVHHJVTLoq2yO+qIf60lz+BGhXTsLJGqKTEIWpx561bZQpe1dVIq2NsR/k1UkdHXasyZ8IwF8BmG6f4OrPOAtBcOIrbCMm7oKwiLVO4r6mh6dQVtRES8pvl0yFWdxvqtgyuP+yaQilsv9KYnOvaejnpamrQHTCIW7MgOcv/Zt4NuTrZfV+clvUPt+7VFObTjBqBKHy2urQsZtkVEuUREp21NaBmlZMFWMtLW0vlKI0LzfH1tU9tbF4zrmpcMK3eSb+nbJzd+wDlkaBI9e36P6GAiFykzBQA+A9lTcabJ/33iKiQQrHaJ4PvqPs0tOYKcmcJ0TSwQOvHZewJpHW1b6vg4Q7R0KFQh/6ohHpBBU1P3tweSLyub8BbWeRPKvpdWhuqq+yME67srhvJfKLkAQ="
 node_js:
   - "node"
 install:
@@ -7,4 +13,4 @@ install:
 script:
   - jshint index.js
   - npm test
-
+  - sonar-scanner
